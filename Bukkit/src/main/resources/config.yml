@@ -1,0 +1,71 @@
+# OpenAI API settings
+openai:
+  # API key
+  # can be created here: https://platform.openai.com/account/api-keys
+  key: ''
+  # Model name. GPT3 and GPT3.5 models are supported
+  # https://platform.openai.com/docs/models/overview
+  model: 'gpt-3.5-turbo'
+  max-tokens: 150
+  # A value that determines the level of creativity and risk-taking the model should use when generating text.
+  # A higher temperature means the model is more likely to generate unexpected results, while a lower temperature results in more deterministic results.
+  temperature: 0.6
+  # An alternative to temperature, top_p determines the proportion of the most likely word choices the model should consider when generating text.
+  # A higher top_p means the model will only consider the most likely words, while a lower top_p means a wider range of words, including less likely ones, will be considered.
+  top-p: 0.8
+
+# Map-related items (hooked map plugins)
+map:
+  # Booleans (true/false) that define what effects are shown on the hooked plugin map
+  effects:
+    # Whether or not to show a glowing effect on the map when an entity is glowing
+    glowing: true
+    # Whether or not to show an invisibility effect on the map when an entity is invisible
+    invisibility: true
+    # Whether or not to show a fire effect on the map when an entity is on fire
+    fire: true
+
+# Plugin permissions
+permissions:
+  # The admin permission
+  # This is used to verify command usage and send update alerts
+  admin: 'gpt.admin'
+
+# Plugin command aliases
+# Set these as alternative commands to run the gptfriend command or its subcommands
+aliases:
+  # The base plugin command is "gptfriend"
+  base:
+    - 'gpt'
+    - 'chatgpt'
+  # The base help command is "help"
+  help:
+    - ''
+  # The base reload command is "reload"
+  reload:
+    - ''
+
+# When true, logs some extra output to the console so you can see if/why things might be failing
+# Ignored if "silent" is set to true
+debug: false
+# Default language (affects console output)
+lang: 'en-US'
+# Whether or not to completely silence debug/info/warns/errors on the console AND in logs
+# Does not affect messages sent to logging server
+# Ignores settings affected by enabling debug mode
+silent: false
+
+stats:
+  # Whether or not to send anonymous errors to egg82 (logs.egg82.me)
+  # True: Send errors anonymously to egg82's Graylog
+  # False: Do not send errors
+  errors: true
+
+update:
+  # Whether or not to automatically check for updates and notify the console if found
+  check: true
+  # Whether or not to notify players with the gpt.admin permission node
+  notify: true
+
+# Config version, no touchy plz
+version: 1.0
