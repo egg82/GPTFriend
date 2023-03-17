@@ -85,7 +85,7 @@ public class GPTTrait extends Trait {
 
         prompt = prompt.replace("%NAME%", npc.getName());
 
-        if (model.startsWith("gpt-3.5")) {
+        if (model.startsWith("gpt-3.5") || model.startsWith("gpt-4")) {
             chatMessages.add(new ChatMessage(ChatMessageRole.SYSTEM.value(), prompt));
 
             chatRequest = ChatCompletionRequest.builder()
@@ -155,12 +155,12 @@ public class GPTTrait extends Trait {
 
     @Override
     public void save(DataKey key) {
-        key.setString("gpt-prompt", prompt);
+        key.setString("prompt", prompt);
     }
 
     @Override
     public void load(DataKey key) throws NPCLoadException {
-        prompt = key.getString("gpt-prompt", prompt);
+        prompt = key.getString("prompt", prompt);
     }
 
     @Override

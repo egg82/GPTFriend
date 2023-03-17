@@ -6,6 +6,8 @@ openai:
   # Model name. GPT3 and GPT3.5 models are supported
   # https://platform.openai.com/docs/models/overview
   model: 'gpt-3.5-turbo'
+  # The maximum number of tokens that the response can use
+  # Does not affect or include the prompt or messages
   max-tokens: 150
   # A value that determines the level of creativity and risk-taking the model should use when generating text.
   # A higher temperature means the model is more likely to generate unexpected results, while a lower temperature results in more deterministic results.
